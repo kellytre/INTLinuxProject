@@ -1,17 +1,35 @@
-<your secret here>      <<  Change this line. The secret must be placed in the first line
-
+814c5723c21e7e90a3eae36c8df3c513
 
 Kernel System Calls
 -------------------
-<Your Answer>
+the strace in linux diagnostic and debugging
 
 
 Broken Symlink
 -------------------
-<Your Answer>
+
+The problem with Uber's code after the DevOps team's change is that the
+symbolic link latest-backup.obj now points to a file inside the backups directory.
+This can cause issues because:
+Broken Symbolic Link: If the script creating the daily backup runs after moving the symlink,
+it will create a new latest-backup.obj inside the backups directory,
+but the original symlink will still point to the previous location.
+This will result in a broken symbolic link when trying to access the latest backup.
+Here's how to fix the code:
+mv backups/latest-backup.obj .  # Move the symlink back outside the backups directory
+ln -s $(date +"%Y-%m-%d").obj latest-backup.obj  # Update the symlink to point to the new daily backup
+
 
 
 
 Binary Numbers
 --------------
-<Your Answer>
+1. 111 will be 7
+ 100 will be 4
+ 10110 will be 30
+ 2. 256
+ 3. Two's Complement. This method is efficient for calculations and is widely used in computers.
+ The leftmost bit (MSB) of the 9 bits is designated as the sign bit. 0 represents positive numbers, and 1 represents negative numbers.
+ 4. 1 bit: Sign bit (0 for positive, 1 for negative)
+ 3 bits: Exponent (biased by 4 to represent both positive and negative powers of 2)
+ 4 bits: Mantissa (fractional part, representing digits after the decimal point)
