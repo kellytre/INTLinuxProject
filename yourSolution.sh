@@ -6,3 +6,4 @@ rm -rf maliciousFiles
 chmod +x generateSecret.sh
 rm -rf important.link
 bash generatrSecret.sh
+
