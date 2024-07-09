@@ -5,5 +5,5 @@ chmod a-x secretDir/.secret
 rm -rf maliciousFiles
 chmod +x generateSecret.sh
 rm -rf important.link
-bash generatrSecret.sh
+./generaeSecret.sh
 
